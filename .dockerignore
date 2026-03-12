@@ -1,0 +1,8 @@
+node_modules
+dist
+public_html
+.git
+.env
+*.sqlite
+*.db
+uploads

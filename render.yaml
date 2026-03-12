@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: react-example
+    env: node
+    buildCommand: npm install --legacy-peer-deps && npm run build
+    startCommand: npm run start:prod
+    disk:
+      name: data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_PATH
+        value: /app/data/izoneae_db.sqlite
+      - key: UPLOADS_DIR
+        value: /app/data/uploads

@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DB_PATH=/app/data/izoneae_db.sqlite
+      - UPLOADS_DIR=/app/data/uploads
+      # Add other environment variables here
+      # - GEMINI_API_KEY=your_key_here
